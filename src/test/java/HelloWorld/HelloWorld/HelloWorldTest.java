@@ -1,38 +1,9 @@
-package HelloWorld.HelloWorld;
+package HelloWorld
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+class HelloWorldTest extends spock.lang.Specification {
+    def subject = new HelloWorld()
 
-/**
- * Unit test for simple App.
- */
-public class HelloWorldTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public HelloWorldTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( HelloWorldTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testHelloWorld()
-    {
-        assertTrue( true );
+    def "add calculate sum of 2 integers"() {
+        expect: subject.add(1, 2) == 3
     }
 }
